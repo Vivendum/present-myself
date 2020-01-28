@@ -1,0 +1,24 @@
+{
+  "name": "present-myself",
+  "version": "1.0.0",
+  "description": "Vivendum portfolio site",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vivendum/present-myself.git"
+  },
+  "homepage": "https://github.com/Vivendum/present-myself#readme",
+  "bugs": {
+    "url": "https://github.com/Vivendum/present-myself/issues"
+  },
+  "author": {
+    "name": "Vivendum",
+    "email": "vivendum@mail.ru>",
+    "url": "https://vivendum.github.io/present-myself"
+  },
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+}
