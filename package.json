@@ -17,8 +17,14 @@
     "url": "https://vivendum.github.io/present-myself"
   },
   "license": "MIT",
+  "devDependencies": {
+    "gulp": "4.0.x",
+    "gulp-plumber": "1.2.x",
+    "gulp-rigger": "0.5.x"
+  },
   "main": "gulpfile.js",
   "scripts": {
-    "test": "npm run test"
-  },
+    "test": "npm run test",
+    "build": "gulp htmlbuild"
+  }
 }
