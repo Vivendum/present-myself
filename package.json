@@ -21,6 +21,7 @@
     "gulp": "4.0.x",
     "gulp-plumber": "1.2.x",
     "gulp-rigger": "0.5.x",
+    "gulp-htmlmin": "5.0.x",
     "browser-sync": "2.26.x"
   },
   "main": "gulpfile.js",
