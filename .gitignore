@@ -9,3 +9,5 @@ Thumbs.db
 *.psd
 node_modules/
 npm-debug.*
+build/
+public/
