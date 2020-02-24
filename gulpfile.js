@@ -56,4 +56,10 @@ gulp.task("server", function () {
   gulp.watch("build/after*.html").on("change", server.reload);
 });
 
+gulp.task("copy", function(done) {
+  gulp.src("build/after/*.html").pipe(gulp.dest("public/"));
+  done();
+});
+
 gulp.task("start", gulp.series("htmlbuild", "server"));
+gulp.task("public", gulp.series("htmlbuild", "copy"));
