@@ -5,6 +5,7 @@ var plumber = require("gulp-plumber");
 var rigger = require("gulp-rigger");
 var htmlmin = require("gulp-htmlmin");
 var server = require("browser-sync").create();
+var ghpages = require('gh-pages');
 
 gulp.task("htmlbuild", function() {
   return gulp.src("source/template/*.html")
@@ -61,5 +62,11 @@ gulp.task("copy", function(done) {
   done();
 });
 
+gulp.task("publish", function(done) {
+  ghpages.publish("public/", function() {});
+  done();
+});
+
 gulp.task("start", gulp.series("htmlbuild", "server"));
 gulp.task("public", gulp.series("htmlbuild", "copy"));
+gulp.task("deploy", gulp.series("public", "publish"));

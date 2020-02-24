@@ -22,13 +22,15 @@
     "gulp-plumber": "1.2.x",
     "gulp-rigger": "0.5.x",
     "gulp-htmlmin": "5.0.x",
-    "browser-sync": "2.26.x"
+    "browser-sync": "2.26.x",
+    "gh-pages": "2.2.x"
   },
   "main": "gulpfile.js",
   "scripts": {
     "test": "npm run test",
     "build": "gulp htmlbuild",
     "start": "gulp start",
-    "public": "gulp public"
+    "public": "gulp public",
+    "deploy": "gulp deploy"
   }
 }
