@@ -6,6 +6,7 @@ var rigger = require("gulp-rigger");
 var htmlmin = require("gulp-htmlmin");
 var sass = require("gulp-sass");
 sass.compiler = require("node-sass");
+var sourcemaps = require("gulp-sourcemaps");
 var server = require("browser-sync").create();
 var ghpages = require('gh-pages');
 
@@ -46,12 +47,15 @@ gulp.task("htmlbuild", function() {
     .pipe(server.stream());
 });
 
-gulp.task("cssbuild", function () {
+gulp.task("cssbuild", function() {
   return gulp.src("source/scss/style.scss")
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: "expanded"
     }))
+    .pipe(gulp.dest("build/before/style"))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/after/style"))
 });
 
