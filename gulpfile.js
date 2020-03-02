@@ -4,6 +4,8 @@ var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var rigger = require("gulp-rigger");
 var htmlmin = require("gulp-htmlmin");
+var sass = require("gulp-sass");
+sass.compiler = require("node-sass");
 var server = require("browser-sync").create();
 var ghpages = require('gh-pages');
 
@@ -42,6 +44,15 @@ gulp.task("htmlbuild", function() {
     }))
     .pipe(gulp.dest("build/after"))
     .pipe(server.stream());
+});
+
+gulp.task("cssbuild", function () {
+  return gulp.src("source/scss/style.scss")
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: "expanded"
+    }))
+    .pipe(gulp.dest("build/after/style"))
 });
 
 gulp.task("server", function () {
