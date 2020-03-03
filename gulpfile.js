@@ -4,11 +4,10 @@ var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var rigger = require("gulp-rigger");
 var htmlmin = require("gulp-htmlmin");
-var sass = require("gulp-sass");
-sass.compiler = require("node-sass");
+var sass = require("gulp-sass"); sass.compiler = require("node-sass");
 var sourcemaps = require("gulp-sourcemaps");
 var server = require("browser-sync").create();
-var ghpages = require('gh-pages');
+var ghpages = require("gh-pages");
 
 gulp.task("htmlbuild", function() {
   return gulp.src("source/template/*.html")
