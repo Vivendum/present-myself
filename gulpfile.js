@@ -52,7 +52,8 @@ gulp.task("cssbuild", function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: "expanded"
+      outputStyle: "expanded",
+      includePaths: require('node-normalize-scss').includePaths
     }))
     .pipe(gulp.dest("build/before/style"))
     .pipe(cssmin({
