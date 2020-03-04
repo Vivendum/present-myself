@@ -1,10 +1,12 @@
 "use strict";
 
 var gulp = require("gulp");
+var postcss = require("gulp-postcss");
 var plumber = require("gulp-plumber");
 var rigger = require("gulp-rigger");
 var htmlmin = require("gulp-htmlmin");
 var sass = require("gulp-sass"); sass.compiler = require("node-sass");
+var autoprefixer = require("autoprefixer");
 var cssmin = require("gulp-csso");
 var sourcemaps = require("gulp-sourcemaps");
 var server = require("browser-sync").create();
@@ -55,6 +57,9 @@ gulp.task("cssbuild", function() {
       outputStyle: "expanded",
       includePaths: require('node-normalize-scss').includePaths
     }))
+    .pipe(postcss([
+      autoprefixer()
+    ]))
     .pipe(gulp.dest("build/before/style"))
     .pipe(cssmin({
       restructure: false,
