@@ -62,7 +62,8 @@ gulp.task("cssbuild", function() {
     ]))
     .pipe(gulp.dest("build/before/style"))
     .pipe(cssmin({
-      restructure: false,
+      restructure: true,
+      comments: false,
       sourceMap: true
     }))
     .pipe(sourcemaps.write("."))
