@@ -9,6 +9,7 @@ var sass = require("gulp-sass"); sass.compiler = require("node-sass");
 var autoprefixer = require("autoprefixer");
 var cssmin = require("gulp-csso");
 var sourcemaps = require("gulp-sourcemaps");
+var deletecomment = require("gulp-strip-comments");
 var server = require("browser-sync").create();
 var ghpages = require("gh-pages");
 
@@ -87,6 +88,7 @@ gulp.task("server", function () {
 
 gulp.task("copy", function(done) {
   gulp.src("build/after/*.html").pipe(gulp.dest("public/"));
+  gulp.src("build/after/style/style.css").pipe(deletecomment.text()).pipe(gulp.dest("public/style/"));
   done();
 });
 
