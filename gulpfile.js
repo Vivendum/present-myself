@@ -98,5 +98,5 @@ gulp.task("publish", function(done) {
 });
 
 gulp.task("start", gulp.series("htmlbuild", "cssbuild", "server"));
-gulp.task("public", gulp.series("htmlbuild", "copy"));
+gulp.task("public", gulp.series("htmlbuild", "cssbuild", "copy"));
 gulp.task("deploy", gulp.series("public", "publish"));
