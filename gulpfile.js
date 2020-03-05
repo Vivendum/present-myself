@@ -81,7 +81,7 @@ gulp.task("server", function () {
 
   gulp.watch("source/template/**/*.html", gulp.series("htmlbuild"));
   gulp.watch("source/scss/**/*.scss", gulp.series("cssbuild"));
-  gulp.watch("build/after*.html").on("change", server.reload);
+  gulp.watch("build/after/*.html").on("change", server.reload);
 });
 
 gulp.task("copy", function(done) {
