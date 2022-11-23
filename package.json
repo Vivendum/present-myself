@@ -29,7 +29,7 @@
     "node-normalize-scss": "8.0.1",
     "gulp-csso": "4.0.x",
     "gulp-sourcemaps": "2.6.x",
-    "browser-sync": "2.26.x",
+    "browser-sync": "2.27.x",
     "gh-pages": "2.2.x"
   },
   "main": "gulpfile.js",
